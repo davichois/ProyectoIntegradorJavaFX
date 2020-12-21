@@ -6,11 +6,15 @@ package modelo;
 public class Categoria {
 
     private int idCategoria;
-    private String nombreCategoria;
+    private String nombre;
 
-    public Categoria(int idCategoria, String nombreCategoria) {
+    public Categoria(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Categoria(int idCategoria, String nombre) {
+        this.nombre = nombre;
         this.idCategoria = idCategoria;
-        this.nombreCategoria = nombreCategoria;
     }
 
     public int getIdCategoria() {
@@ -21,12 +25,12 @@ public class Categoria {
         this.idCategoria = idCategoria;
     }
 
-    public String getNombreCategoria() {
-        return nombreCategoria;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreCategoria(String nombreCategoria) {
-        this.nombreCategoria = nombreCategoria;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
 }

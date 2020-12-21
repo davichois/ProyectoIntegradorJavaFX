@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="1373.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.VentaControllerGeneral">
+   <children>
+      <Label layoutX="72.0" layoutY="14.0" text="Never Venta">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblVenta" layoutX="70.0" layoutY="304.0" prefHeight="286.0" prefWidth="1239.0">
+         <columns>
+            <TableColumn fx:id="colID" prefWidth="44.0" text="ID " />
+         </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="71.0" layoutY="272.0" mnemonicParsing="false" onAction="#agregar" prefHeight="30.0" prefWidth="97.0" text="AGREGAR">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../utils/images/new_copy_24px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnEliminar" layoutX="176.0" layoutY="273.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="18.0" prefWidth="110.0" text="ELIMINAR">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../utils/images/delete_document_24px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnVender" layoutX="70.0" layoutY="593.0" mnemonicParsing="false" onAction="#vender" prefHeight="30.0" prefWidth="97.0" text="Vender">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../utils/images/auction_50px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="txtDni" layoutX="73.0" layoutY="104.0" onKeyPressed="#buscarUsuario" prefHeight="25.0" prefWidth="147.0" promptText="DNI/RUC" />
+      <Label layoutX="74.0" layoutY="76.0" text="Informacion del usuario">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNombre" layoutX="261.0" layoutY="104.0" prefHeight="25.0" prefWidth="147.0" promptText="Nombre" />
+      <TextField fx:id="txtApellido" layoutX="444.0" layoutY="104.0" prefHeight="25.0" prefWidth="147.0" promptText="Apellidos" />
+      <TextField fx:id="txtTelefono" layoutX="628.0" layoutY="104.0" prefHeight="25.0" prefWidth="147.0" promptText="Telefono" />
+      <Label layoutX="74.0" layoutY="145.0" text="Informacion de la venta">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtZona" layoutX="810.0" layoutY="104.0" prefHeight="25.0" prefWidth="147.0" promptText="Zona" />
+      <TextField fx:id="txtVendedor" layoutX="73.0" layoutY="171.0" prefHeight="25.0" prefWidth="147.0" promptText="Vendedor" />
+      <Label layoutX="75.0" layoutY="207.0" text="Modo de Pago">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbModoPago" layoutX="74.0" layoutY="228.0" prefWidth="150.0" />
+   </children>
+</Pane>

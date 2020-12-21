@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="1371.0" style="-fx-background-color: #dddddd;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.MenuGeneralController">
+   <children>
+      <MenuBar layoutY="-3.0" prefHeight="25.0" prefWidth="1377.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="About" mnemonicParsing="false" onAction="#aboutProduct" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <BorderPane fx:id="bp" layoutY="68.0" prefHeight="664.0" prefWidth="1373.0">
+         <center>
+            <Pane fx:id="ap_principal" prefHeight="664.0" prefWidth="1373.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnCrearVenta" layoutX="431.0" layoutY="109.0" mnemonicParsing="false" onAction="#CrearVentaVista" prefHeight="105.0" prefWidth="162.0" text="Crear Venta">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../utils/images/shopping_cart_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnCrearProductos" layoutX="613.0" layoutY="109.0" mnemonicParsing="false" onAction="#CrearProductosVista" prefHeight="105.0" prefWidth="162.0" text="Productos">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../utils/images/box_24px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnCrearClientes" layoutX="794.0" layoutY="110.0" mnemonicParsing="false" onAction="#CrearClientesVista" prefHeight="105.0" prefWidth="162.0" text="Clientes">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../utils/images/management_30px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnCrearVendedores" layoutX="430.0" layoutY="229.0" mnemonicParsing="false" onAction="#CrearVendedoresVista" prefHeight="105.0" prefWidth="162.0" text="Vendedores">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../utils/images/customer_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <effect>
+                        <Reflection bottomOpacity="0.1" fraction="0.54" topOpacity="0.48" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="btnCrearCategorias" layoutX="612.0" layoutY="229.0" mnemonicParsing="false" onAction="#CrearCategoriasVista" prefHeight="105.0" prefWidth="162.0" text="Categoria">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../utils/images/tags_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <effect>
+                        <Reflection bottomOpacity="0.1" fraction="0.54" topOpacity="0.48" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="btnCrearZonas" layoutX="793.0" layoutY="230.0" mnemonicParsing="false" onAction="#CrearZonasVista" prefHeight="105.0" prefWidth="162.0" text="Zonas">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../utils/images/region_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <effect>
+                        <Reflection bottomOpacity="0.1" fraction="0.54" topOpacity="0.48" />
+                     </effect>
+                  </Button>
+                  <Label layoutX="434.0" layoutY="52.0" text="Catalogo Never ">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+         </center>
+      </BorderPane>
+      <AnchorPane layoutX="-1.0" layoutY="20.0" prefHeight="43.0" prefWidth="1384.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Button fx:id="btnInicio" layoutX="17.0" layoutY="9.0" mnemonicParsing="false" onAction="#Inicio" prefHeight="25.0" prefWidth="66.0" text="INICIO">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="14.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../utils/images/home_24px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnRegresar" layoutX="17.0" layoutY="90.0" mnemonicParsing="false" onAction="#regresarMenu" prefHeight="25.0" prefWidth="32.0">
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../utils/images/left_26px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</Pane>

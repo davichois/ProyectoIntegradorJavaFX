@@ -8,17 +8,18 @@ public class Producto {
     private int idProducto;
     private String nombre;
     private int precio;
-    private Usuario idUsuario;
+    private int stock;
+    private String descripcion;
+    private String codigoBarra;
     private Categoria idCategoria;
-    private Codigo idCodigo;
 
-    public Producto(int idProducto, String nombre, int precio, Usuario idUsuario, Categoria idCategoria, Codigo idCodigo) {
-        this.idProducto = idProducto;
+    public Producto(String nombre, int precio, int stock, String descripcion, String codigoBarra, Categoria idCategoria) {
         this.nombre = nombre;
         this.precio = precio;
-        this.idUsuario = idUsuario;
+        this.stock = stock;
+        this.descripcion = descripcion;
+        this.codigoBarra = codigoBarra;
         this.idCategoria = idCategoria;
-        this.idCodigo = idCodigo;
     }
 
     public int getIdProducto() {
@@ -45,12 +46,28 @@ public class Producto {
         this.precio = precio;
     }
 
-    public Usuario getIdUsuario() {
-        return idUsuario;
+    public int getStock() {
+        return stock;
     }
 
-    public void setIdUsuario(Usuario idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getCodigoBarra() {
+        return codigoBarra;
+    }
+
+    public void setCodigoBarra(String codigoBarra) {
+        this.codigoBarra = codigoBarra;
     }
 
     public Categoria getIdCategoria() {
@@ -59,14 +76,6 @@ public class Producto {
 
     public void setIdCategoria(Categoria idCategoria) {
         this.idCategoria = idCategoria;
-    }
-
-    public Codigo getIdCodigo() {
-        return idCodigo;
-    }
-
-    public void setIdCodigo(Codigo idCodigo) {
-        this.idCodigo = idCodigo;
     }
 
 }

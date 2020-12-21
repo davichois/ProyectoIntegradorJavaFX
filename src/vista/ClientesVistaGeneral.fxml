@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="1373.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ClientesControllerGeneral">
+   <children>
+      <TableView fx:id="tblClientes" layoutX="70.0" layoutY="106.0" prefHeight="548.0" prefWidth="1239.0">
+         <columns>
+            <TableColumn fx:id="colID" prefWidth="89.66666412353516" text="ID " />
+            <TableColumn fx:id="colNombre" prefWidth="178.0" text="NOMBRE" />
+            <TableColumn fx:id="colApellido" prefWidth="208.0" text="APELLIDO" />
+            <TableColumn fx:id="colDNI" prefWidth="180.0" text="DNI" />
+            <TableColumn fx:id="colTelefono" prefWidth="194.0" text="TELEFONO" />
+            <TableColumn fx:id="colZona" prefWidth="264.0" text="ZONA" />
+            <TableColumn fx:id="colSexo" prefWidth="124.0" text="SEXO" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnAgregar" layoutX="71.0" layoutY="48.0" mnemonicParsing="false" onAction="#agregar" prefHeight="30.0" prefWidth="97.0" text="AGREGAR">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../utils/images/new_copy_24px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnActualizar" layoutX="189.0" layoutY="48.0" mnemonicParsing="false" onAction="#actualizar" prefHeight="30.0" prefWidth="107.0" text="ACTULIZAR">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../utils/images/document_exchange_24px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnEliminar" layoutX="315.0" layoutY="48.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="32.0" prefWidth="110.0" text="ELIMINAR">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../utils/images/delete_document_24px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="txtBusqueda" layoutX="861.0" layoutY="47.0" prefHeight="32.0" prefWidth="448.0" promptText="Buscar" />
+      <Label layoutX="72.0" layoutY="14.0" text="Never Clientes">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

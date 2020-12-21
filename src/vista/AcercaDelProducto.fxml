@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextArea editable="false" focusTraversable="false" layoutX="15.0" layoutY="106.0" prefHeight="468.0" prefWidth="486.0" text="Version del producto&#10;Never System 1.0&#10;&#10;Build Information&#10;Version 1.0&#10;Date: 2020-12-09&#10;Java Version: 1.8, Oracle Corporation&#10;JavaFX: 8.5.0&#10;Scene Builder: 8.5.0&#10;&#10;Inicio de Sesion&#10;Inicio de sesion con el admin de la empresa.&#10;&#10;Arquitectura&#10;MVC: Modelo, Vista, Controlador.&#10;&#10;Sistema Operativo&#10;Windows 10, amd64, 10.0&#10;&#10;&#10;&#10;&#10;Copyright (c) 2020-2024, Never(davichois). " />
+      <Label layoutX="109.0" layoutY="44.0" text="Never System Corporation">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

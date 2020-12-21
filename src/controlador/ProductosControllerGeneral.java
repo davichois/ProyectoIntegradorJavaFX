@@ -7,7 +7,7 @@ import javafx.fxml.Initializable;
 /**
  * @author davichois
  */
-public class RegisterController implements Initializable {
+public class ProductosControllerGeneral implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
