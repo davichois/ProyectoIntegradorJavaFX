@@ -25,8 +25,9 @@
             <TableColumn fx:id="colPrecio" prefWidth="72.0" text="Precio" />
             <TableColumn fx:id="colStock" prefWidth="79.0" text="Stock" />
             <TableColumn fx:id="colDescription" prefWidth="221.0" text="Description" />
-            <TableColumn fx:id="colCodigoBarra" prefWidth="344.0" text="Codigo de Barra" />
-            <TableColumn fx:id="colCantidad" prefWidth="324.0" text="Cantidad" />
+            <TableColumn fx:id="colCodigoBarra" prefWidth="173.0" text="Codigo de Barra" />
+            <TableColumn fx:id="colCantidad" prefWidth="344.0" text="Cantidad" />
+            <TableColumn fx:id="colTotalVenta" prefWidth="151.0" text="Total venta" />
          </columns>
       </TableView>
       <Button fx:id="btnAgregar" layoutX="71.0" layoutY="272.0" mnemonicParsing="false" onAction="#agregar" prefHeight="30.0" prefWidth="97.0" text="AGREGAR">
@@ -87,5 +88,12 @@
          </font>
       </Label>
       <ComboBox fx:id="cbModoPago" layoutX="74.0" layoutY="228.0" prefWidth="150.0" />
+      <Button fx:id="btnRecalcular" layoutX="1239.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#recalcular" prefHeight="29.0" prefWidth="70.0" text="Recalcular" />
+      <TextField fx:id="txtTotal" layoutX="1175.0" layoutY="596.0" prefHeight="25.0" prefWidth="134.0" />
+      <Label layoutX="1129.0" layoutY="601.0" text="Total">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

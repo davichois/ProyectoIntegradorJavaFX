@@ -7,13 +7,16 @@ public class Venta {
 
     private int idVenta;
     private String tipoVenta;
-    private Cliente idCliente;
-    private Vendedor idVendedor;
+    private int idCliente;
+    private int idVendedor;
+    private double totalVenta;
 
-    public Venta(String tipoVenta, Cliente idCliente, Vendedor idVendedor) {
+    public Venta(int idVenta, String tipoVenta, int idCliente, int idVendedor, double totalVenta) {
+        this.idVenta = idVenta;
         this.tipoVenta = tipoVenta;
         this.idCliente = idCliente;
         this.idVendedor = idVendedor;
+        this.totalVenta = totalVenta;
     }
 
     public int getIdVenta() {
@@ -32,19 +35,19 @@ public class Venta {
         this.tipoVenta = tipoVenta;
     }
 
-    public Cliente getIdCliente() {
+    public int getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(Cliente idCliente) {
+    public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
     }
 
-    public Vendedor getIdVendedor() {
+    public int getIdVendedor() {
         return idVendedor;
     }
 
-    public void setIdVendedor(Vendedor idVendedor) {
+    public void setIdVendedor(int idVendedor) {
         this.idVendedor = idVendedor;
     }
 

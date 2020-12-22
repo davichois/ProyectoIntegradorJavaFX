@@ -110,10 +110,20 @@ public class ZonasControllerGeneral implements Initializable {
 
                 int resultado = ps.executeUpdate();
 
-                if (resultado > 2) {
-                    System.out.println("Registro insertado correctamente...");
+                if (resultado > 0) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    System.out.println(alert);
+                    alert.setHeaderText(null);
+                    alert.setTitle("Info");
+                    alert.setContentText("Exitoso registro insertado");
+                    alert.showAndWait();
                 } else {
-                    System.out.println("Error al registrar");
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    System.out.println(alert);
+                    alert.setHeaderText(null);
+                    alert.setTitle("Error");
+                    alert.setContentText("Error al inserta datos");
+                    alert.showAndWait();
                 }
                 this.zona.clear();
                 traerDatos();

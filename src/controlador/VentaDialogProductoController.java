@@ -97,7 +97,7 @@ public class VentaDialogProductoController implements Initializable {
             Producto producto = new Producto(p.getIdProducto(), p.getNombre(), p.getPrecio(), p.getStock(), p.getDescripcion(), p.getCodigoBarra(), p.getIdCategoria());
             this.p = producto;
         }
-        
+
         Stage stage = (Stage) this.btnAgregar.getScene().getWindow();
         stage.close();
     }

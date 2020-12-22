@@ -12,6 +12,8 @@ public class Producto {
     private String descripcion;
     private String codigoBarra;
     private int idCategoria;
+    private int cantidad;
+    private double preciototal;
 
     public Producto(int idProducto, String nombre, int precio, int stock, String descripcion, String codigoBarra, int idCategoria) {
         this.idProducto = idProducto;
@@ -86,6 +88,22 @@ public class Producto {
 
     public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public double getPreciototal() {
+        return preciototal;
+    }
+
+    public void setPreciototal(double preciototal) {
+        this.preciototal = preciototal;
     }
 
 }

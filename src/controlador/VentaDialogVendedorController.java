@@ -21,71 +21,65 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import modelo.Cliente;
+import modelo.Vendedor;
 import utils.db.ConnectionDB;
 
 /**
  * @author davichois
  */
-public class VentaDialogUsuarioController implements Initializable {
+public class VentaDialogVendedorController implements Initializable {
 
     @FXML
     private TextField txtBusqueda;
+    @FXML
+    private TableView<Vendedor> tblVendedor;
     @FXML
     private TableColumn colID;
     @FXML
     private TableColumn colNombre;
     @FXML
-    private TableColumn colApellido;
+    private TableColumn colEdad;
     @FXML
     private TableColumn colDni;
     @FXML
     private TableColumn colTelefono;
     @FXML
-    private TableColumn colIDZona;
-    @FXML
-    private TableColumn colSexo;
-    @FXML
     private Button btnAgregar;
     @FXML
     private Button btnSalir;
-    @FXML
-    private TableView<Cliente> tblUsuario;
 
-    private ObservableList<Cliente> usuario;
+    private ObservableList<Vendedor> vendedor;
 
-    private ObservableList<Cliente> usuarioFiltrado;
+    private ObservableList<Vendedor> vendedorFiltrado;
 
-    private Cliente c;
+    private Vendedor v;
 
     private static ConnectionDB db = new ConnectionDB();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        usuario = FXCollections.observableArrayList();
-        usuarioFiltrado = FXCollections.observableArrayList();
+        vendedor = FXCollections.observableArrayList();
+        vendedorFiltrado = FXCollections.observableArrayList();
 
-        this.tblUsuario.setItems(usuario);
+        this.tblVendedor.setItems(vendedor);
 
-        this.colID.setCellValueFactory(new PropertyValueFactory("idCliente"));
+        this.colID.setCellValueFactory(new PropertyValueFactory("idVendedor"));
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
-        this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
+        this.colEdad.setCellValueFactory(new PropertyValueFactory("apellido"));
         this.colDni.setCellValueFactory(new PropertyValueFactory("dni"));
         this.colTelefono.setCellValueFactory(new PropertyValueFactory("telefono"));
-        this.colIDZona.setCellValueFactory(new PropertyValueFactory("idZona"));
-        this.colSexo.setCellValueFactory(new PropertyValueFactory("sexo"));
 
         try {
             traerDatos();
         } catch (SQLException ex) {
-            Logger.getLogger(VentaDialogUsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VentaDialogVendedorController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @FXML
     private void agregar(MouseEvent event) {
-        Cliente c = this.tblUsuario.getSelectionModel().getSelectedItem();
-        if (c == null) {
+        Vendedor v = this.tblVendedor.getSelectionModel().getSelectedItem();
+        if (v == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             System.out.println(alert);
             alert.setHeaderText(null);
@@ -93,8 +87,8 @@ public class VentaDialogUsuarioController implements Initializable {
             alert.setContentText("Debes seleccionar a un producto.");
             alert.showAndWait();
         } else {
-            Cliente cliente = new Cliente(c.getIdCliente(), c.getNombre(), c.getApellido(), c.getDni(), c.getTelefono(), c.getIdZona(), c.getSexo());
-            this.c = cliente;
+            Vendedor vendedor = new Vendedor(v.getIdVendedor(), v.getNombre(), v.getEdad(), v.getDni(), v.getTelefono());
+            this.v = vendedor;
         }
 
         Stage stage = (Stage) this.btnAgregar.getScene().getWindow();
@@ -103,7 +97,7 @@ public class VentaDialogUsuarioController implements Initializable {
 
     @FXML
     private void salir(MouseEvent event) {
-        this.c = null;
+        this.v = null;
         Stage stage = (Stage) this.btnSalir.getScene().getWindow();
         stage.close();
     }
@@ -112,32 +106,32 @@ public class VentaDialogUsuarioController implements Initializable {
     private void busquedaProducto(KeyEvent event) {
         String busquedaC = this.txtBusqueda.getText();
         if (busquedaC.isEmpty()) {
-            this.tblUsuario.setItems(usuario);
+            this.tblVendedor.setItems(vendedor);
         } else {
-            this.usuarioFiltrado.clear();
-            for (Cliente p : this.usuario) {
-                if (p.getNombre().toLowerCase().contains(busquedaC.toLowerCase())) {
-                    this.usuarioFiltrado.add(p);
+            this.vendedorFiltrado.clear();
+            for (Vendedor v : this.vendedor) {
+                if (v.getNombre().toLowerCase().contains(busquedaC.toLowerCase())) {
+                    this.vendedorFiltrado.add(v);
                 }
             }
-            this.tblUsuario.setItems(usuarioFiltrado);
-            this.tblUsuario.refresh();
+            this.tblVendedor.setItems(vendedorFiltrado);
+            this.tblVendedor.refresh();
         }
     }
 
     private void traerDatos() throws SQLException {
         Connection conex = db.openConexion();
-        PreparedStatement ps = conex.prepareStatement("select * from cliente");
+        PreparedStatement ps = conex.prepareStatement("select * from vendedor");
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
-            Cliente newCliente = new Cliente(rs.getInt("idCliente"), rs.getString("nombre"), rs.getString("apellido"), rs.getString("dni"), rs.getInt("telefono"), String.valueOf(rs.getInt("idZona")), rs.getString("sexo"));
-            this.usuario.add(newCliente);
-            this.tblUsuario.refresh();
+            Vendedor newVendedor = new Vendedor(rs.getInt("idVendedor"), rs.getString("nombre"), rs.getInt("edad"), rs.getInt("dni"), rs.getInt("telefono"));
+            this.vendedor.add(newVendedor);
+            this.tblVendedor.refresh();
         }
     }
 
-    public Cliente getC() {
-        return c;
+    public Vendedor getV() {
+        return v;
     }
 
 }
