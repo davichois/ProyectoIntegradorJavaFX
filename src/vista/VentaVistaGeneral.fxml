@@ -18,9 +18,15 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TableView fx:id="tblVenta" layoutX="70.0" layoutY="304.0" prefHeight="286.0" prefWidth="1239.0">
+      <TableView fx:id="tblVenta" editable="true" layoutX="70.0" layoutY="304.0" prefHeight="286.0" prefWidth="1239.0">
          <columns>
             <TableColumn fx:id="colID" prefWidth="44.0" text="ID " />
+            <TableColumn fx:id="colNombre" prefWidth="153.99996948242188" text="Nombre" />
+            <TableColumn fx:id="colPrecio" prefWidth="72.0" text="Precio" />
+            <TableColumn fx:id="colStock" prefWidth="79.0" text="Stock" />
+            <TableColumn fx:id="colDescription" prefWidth="221.0" text="Description" />
+            <TableColumn fx:id="colCodigoBarra" prefWidth="344.0" text="Codigo de Barra" />
+            <TableColumn fx:id="colCantidad" prefWidth="324.0" text="Cantidad" />
          </columns>
       </TableView>
       <Button fx:id="btnAgregar" layoutX="71.0" layoutY="272.0" mnemonicParsing="false" onAction="#agregar" prefHeight="30.0" prefWidth="97.0" text="AGREGAR">
@@ -74,7 +80,7 @@
          </font>
       </Label>
       <TextField fx:id="txtZona" layoutX="810.0" layoutY="104.0" prefHeight="25.0" prefWidth="147.0" promptText="Zona" />
-      <TextField fx:id="txtVendedor" layoutX="73.0" layoutY="171.0" prefHeight="25.0" prefWidth="147.0" promptText="Vendedor" />
+      <TextField fx:id="txtVendedor" layoutX="73.0" layoutY="171.0" onKeyPressed="#buscarVendedor" prefHeight="25.0" prefWidth="147.0" promptText="Vendedor" />
       <Label layoutX="75.0" layoutY="207.0" text="Modo de Pago">
          <font>
             <Font name="System Bold" size="12.0" />

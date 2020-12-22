@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controlador.ProductoDialogController">
+   <children>
+      <Label layoutX="226.0" layoutY="21.0" text="Producto Never">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNombre" layoutX="227.0" layoutY="96.0" prefHeight="25.0" prefWidth="265.0" />
+      <Label layoutX="109.0" layoutY="100.0" text="Nombre Producto : " />
+      <TextField fx:id="txtPrecio" layoutX="227.0" layoutY="133.0" prefHeight="25.0" prefWidth="265.0" />
+      <Label layoutX="109.0" layoutY="137.0" text="Precio Producto : " />
+      <TextField fx:id="txtStock" layoutX="227.0" layoutY="169.0" prefHeight="25.0" prefWidth="265.0" />
+      <Label layoutX="109.0" layoutY="173.0" text="Stock : " />
+      <TextField fx:id="txtDescription" layoutX="227.0" layoutY="205.0" prefHeight="25.0" prefWidth="265.0" />
+      <Label layoutX="109.0" layoutY="209.0" text="Description : " />
+      <Label layoutX="109.0" layoutY="246.0" text="Codigo de Barra : " />
+      <TextField fx:id="txtCodigoBarra" layoutX="227.0" layoutY="242.0" prefHeight="25.0" prefWidth="265.0" />
+      <ComboBox fx:id="cbCategoria" layoutX="227.0" layoutY="280.0" prefHeight="25.0" prefWidth="265.0" />
+      <Label layoutX="109.0" layoutY="284.0" text="Categoria : " />
+      <Button fx:id="btnGuardar" layoutX="253.0" layoutY="333.0" mnemonicParsing="false" onMouseClicked="#guardar" prefHeight="25.0" prefWidth="96.0" text="Guardar" />
+      <Button fx:id="btnSalir" layoutX="281.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#salir" text="Salir" />
+   </children>
+</AnchorPane>

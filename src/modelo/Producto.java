@@ -11,9 +11,19 @@ public class Producto {
     private int stock;
     private String descripcion;
     private String codigoBarra;
-    private Categoria idCategoria;
+    private int idCategoria;
 
-    public Producto(String nombre, int precio, int stock, String descripcion, String codigoBarra, Categoria idCategoria) {
+    public Producto(int idProducto, String nombre, int precio, int stock, String descripcion, String codigoBarra, int idCategoria) {
+        this.idProducto = idProducto;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+        this.descripcion = descripcion;
+        this.codigoBarra = codigoBarra;
+        this.idCategoria = idCategoria;
+    }
+
+    public Producto(String nombre, int precio, int stock, String descripcion, String codigoBarra, int idCategoria) {
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
@@ -70,11 +80,11 @@ public class Producto {
         this.codigoBarra = codigoBarra;
     }
 
-    public Categoria getIdCategoria() {
+    public int getIdCategoria() {
         return idCategoria;
     }
 
-    public void setIdCategoria(Categoria idCategoria) {
+    public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
     }
 
