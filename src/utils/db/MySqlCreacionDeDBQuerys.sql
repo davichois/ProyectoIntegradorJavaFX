@@ -11,6 +11,8 @@ create table usuario(
     primary key(`idUsuario`)
 );
 
+select * from usuario;
+select nombre from usuario where nombre = "admin";
 insert into usuario(nombre, contraseña) 
 values("admin", "admin");
 
@@ -39,6 +41,11 @@ create table zona(
     primary key (`idZona`)
 );
 
+insert into zona(departamento, provincia, distrito) 
+values("San Martin", "Tarapoto", "Morales");
+
+select * from zona;
+
 # Creamos la tabla de productos
 create table producto(
 	idProducto int not null auto_increment,
@@ -52,12 +59,20 @@ create table producto(
 	foreign key(idCategoria) references categoria(idCategoria)
 );
 
+insert into producto(nombre, precio, stock, descripcion, codigoBarra, idCategoria) 
+values( "Leche de ganado" ,5.50 ,20,"Este es un producto alto en grasas", "87219374323", 1);
+
 # Creamos la tabla de categorias
 create table categoria(
 	idCategoria int not null auto_increment,
     nombre varchar(90) not null,
     primary key (`idCategoria`)
 );
+
+insert into categoria(nombre) 
+values("chocolates");
+
+select * from categoria;
 
 # Creamos la tabla de vendedor
 create table vendedor(
@@ -73,6 +88,7 @@ create table vendedor(
 create table venta(
 	idVenta int not null auto_increment,
     tipoVenta varchar(50) not null,
+    totalVenta double not null,
     idCliente int not null,
     idVendedor int not null,
     primary key (`idVenta`),
